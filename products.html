@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Browse ShopEasy's wide range of products. Find electronics, accessories and more at competitive prices."
+    />
+    <title>ShopEasy - Products | Browse Our Collection</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="main-header">
+      <div class="container">
+        <div class="logo-container">
+          <a href="index.html" aria-label="ShopEasy Home">
+            <img
+              src="images/logo.png"
+              alt="ShopEasy Logo"
+              class="logo"
+              width="120"
+              height="auto"
+            />
+            <h1>ShopEasy</h1>
+          </a>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul class="nav-list" id="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="products.html" class="active" aria-current="page"
+                >Products</a
+              >
+            </li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li>
+              <a href="#" id="cart-btn" aria-label="Shopping cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span id="cart-count" aria-live="polite">0</span>
+              </a>
+            </li>
+          </ul>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Mobile menu"
+            aria-expanded="false"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" class="products-page">
+      <section class="products-hero">
+        <div class="container">
+          <h1>Our Products</h1>
+          <p>Quality items at affordable prices</p>
+        </div>
+        <div class="hero-overlay"></div>
+      </section>
+
+      <section class="products-section">
+        <div class="container">
+          <div class="products-header">
+            <h2>Browse Our Collection</h2>
+            <div class="products-controls">
+              <div class="filter-options">
+                <div class="filter-group">
+                  <label for="category-filter">Category:</label>
+                  <select id="category-filter" class="styled-select">
+                    <option value="all">All Categories</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="accessories">Accessories</option>
+                    <option value="home">Home & Living</option>
+                    <option value="fashion">Fashion</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label for="price-filter">Price Range:</label>
+                  <select id="price-filter" class="styled-select">
+                    <option value="all">All Prices</option>
+                    <option value="0-50">R0 - R50</option>
+                    <option value="50-100">R50 - R100</option>
+                    <option value="100-200">R100 - R200</option>
+                    <option value="200+">R200+</option>
+                  </select>
+                </div>
+                <div class="filter-group">
+                  <label for="sort-by">Sort By:</label>
+                  <select id="sort-by" class="styled-select">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Customer Rating</option>
+                    <option value="newest">Newest Arrivals</option>
+                  </select>
+                </div>
+              </div>
+              <div class="view-options">
+                <button
+                  class="view-btn active"
+                  data-view="grid"
+                  aria-label="Grid view"
+                >
+                  <i class="fas fa-th"></i>
+                </button>
+                <button
+                  class="view-btn"
+                  data-view="list"
+                  aria-label="List view"
+                >
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="products-grid" id="products-grid">
+            <!-- Products will be loaded via JavaScript -->
+            <div class="product-card skeleton">
+              <div class="product-image">
+                <img
+                  src="images/product-image.jpg"
+                  alt="Electronics"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-info">
+                <h3 class="skeleton-text"></h3>
+                <p class="skeleton-text"></p>
+                <div class="product-price skeleton-text"></div>
+              </div>
+            </div>
+            <!-- Repeat skeleton cards as needed -->
+          </div>
+
+          <div class="pagination">
+            <button class="pagination-btn" disabled>
+              <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <div class="page-numbers">
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <span>...</span>
+              <button class="page-btn">5</button>
+            </div>
+            <button class="pagination-btn">
+              Next <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="featured-section">
+        <div class="container">
+          <h2>Featured Categories</h2>
+          <div class="category-grid">
+            <a href="#" class="category-card" data-category="electronics">
+              <div class="category-image">
+                <img
+                  src="images/electronics-category.jpg"
+                  alt="Electronics"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Electronics</h3>
+            </a>
+            <a href="#" class="category-card" data-category="accessories">
+              <div class="category-image">
+                <img
+                  src="images/accessories-category.jpg"
+                  alt="Accessories"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Accessories</h3>
+            </a>
+            <a href="#" class="category-card" data-category="home">
+              <div class="category-image">
+                <img
+                  src="images/home-category.jpg"
+                  alt="Home & Living"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Home & Living</h3>
+            </a>
+            <a href="#" class="category-card" data-category="fashion">
+              <div class="category-image">
+                <img
+                  src="images/fashion-category.jpg"
+                  alt="Fashion"
+                  loading="lazy"
+                />
+              </div>
+              <h3>Fashion</h3>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="products.html">Products</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">Shipping Policy</a></li>
+              <li><a href="#">Returns & Refunds</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe for updates and special offers</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit" class="btn">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopEasy. All rights reserved.</p>
+          <div class="legal-links">
+            <a href="#">Privacy Policy</a> |
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="cart-modal"
+      id="cart-modal"
+      aria-hidden="true"
+      aria-labelledby="cart-modal-title"
+    >
+      <!-- Cart modal content -->
+    </div>
+
+    <button class="back-to-top" aria-label="Back to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+  </body>
+</html>
